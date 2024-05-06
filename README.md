@@ -87,3 +87,39 @@ To stop the feature, you can add the `Then debug` step inside your feature. It w
 ## To view the html report of the last run
 
 - run the command `npm run report`.
+
+
+## Sample tests
+
+In this template, two test cases are implemented for reference. You can find them in the features directory.
+
+```
+Feature: Login
+
+  Background: Navigation
+    Given Go to the login website
+
+  Scenario: Success login
+    Then The page title "Test Login | Practice Test Automation"
+    When Enter the user name "student"
+    And Enter the password "Password123"
+    And Click in "Submit"
+    Then We see the message "Logged In Successfully"
+
+  Scenario: Wrong password
+    Then The page title "Test Login | Practice Test Automation"
+    When Enter the user name "student"
+    And Enter the password "Password12"
+    And Click in "Submit"
+    Then We see the and error message
+```
+
+Each feature file should include the feature name (Epics or functionalities), a Background statement that sets up the application for the tests, and scenarios in Gherkin format:
+
+- Given **The current state of the system**
+- When **The user or system action**
+- Then **The expected result**
+
+The implementation of the steps is in the src/steps directory. In this folder, you'll find a file with general implementations like "Click on a button with the text..." and a file for each feature like "Enter the user name".
+
+Support files are located in src/support and contain configurations and implementations such as before steps and before_all setups. If other support scripts not related to Cucumber or Playwright are required, add them to src/utils.
