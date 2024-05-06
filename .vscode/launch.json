@@ -1,0 +1,71 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "debug",
+      "request": "launch",
+      "runtimeArgs": [
+        "./node_modules/.bin/cucumber-js",
+        "${file}"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node",
+      "env": {
+        "DEBUG": "pw:api",
+        "PWDEBUG": "1"
+      },
+      "console": "internalConsole",
+      "outputCapture": "std"
+    },
+    {
+      "name": "debug-only",
+      "request": "launch",
+      "runtimeArgs": [
+        "./node_modules/.bin/cucumber-js",
+        "${file}",
+        "--tags",
+        "@only"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node",
+      "env": {
+        "DEBUG": "pw:api",
+        "PWDEBUG": "1"
+      },
+      "console": "internalConsole",
+      "outputCapture": "std"
+    },
+    {
+      "name": "Attach by Process ID",
+      "processId": "${command:PickProcess}",
+      "request": "attach",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
+    },
+    {
+      "name": "Current TS File",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "${relativeFile}"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+    }
+  ]
+}
