@@ -1,4 +1,4 @@
-# Eclypsium E2E starter project with Playwright 
+# E2E starter project with Playwright 
 
 A foundational repository designed for creating end-to-end (E2E) tests using Cucumber(7) alongside Playwright and implemented in Typescript.
 
