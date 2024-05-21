@@ -32,8 +32,6 @@ Create a repo based on this template and start writing your tests.
 
 ## Browser selection
 
-## Browser selection
-
 By default, we will use Chromium. You can define an environment variable called `BROWSER` and set the name of the browser. Available options: chromium, firefox, webkit
 
 On Linux and Mac, you can use:
@@ -170,4 +168,28 @@ To generate the Pretty report after run the tests run:
 
 ```
 npm run new-report
+```
+
+Or run:
+```
+npm run report
+```
+
+To open it in the browser
+
+## npm run commandas
+```
+    "api": To run the test with playwright API in debug
+    "cucumber-check": To check features
+    "debug": To run the test for debug
+    "video": To run the test and record video
+    "format": To format the files
+    "lint": To check the repo with linter
+    "only": To run specific tests 
+    "smoke": To run smoke suite
+    "report": To generate repport and open it in browser
+    "test": To run all the tests
+    "test:parallel": To run all the tests in parallel
+    "docker": To run the tests in docker
+    "new-report": To generate Pretty report
 ```

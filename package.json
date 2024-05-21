@@ -11,14 +11,14 @@
     "lint": "eslint ./src/**/* --format visualstudio --no-color --report-unused-disable-directives",
     "only": "cucumber-js --tags",
     "smoke": "cucumber-js --parallel=4 --tags @smoke; node ./src/support/reports/cucumber-reporter.ts",
-    "report": "xdg-open reports/report.html",
+    "report": "node ./src/support/reports/cucumber-reporter.ts; xdg-open reports/index.html",
     "snippets": "cucumber-js features/**/*.feature --dry-run --format snippets",
     "steps-usage": "cucumber-js features/**/*.feature --dry-run",
     "all": "cucumber-js features/**/*.feature",
     "test": "cucumber-js",
     "test:parallel": "cucumber-js --parallel=4",
     "docker": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.42.1-jammy /bin/bash",
-    "new-report": "node ./src/support/reports/cucumber-reporter.ts "
+    "new-report": "node ./src/support/reports/cucumber-reporter.ts"
   },
   "engines": {
     "node": ">=14"
