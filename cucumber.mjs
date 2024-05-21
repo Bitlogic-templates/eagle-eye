@@ -15,14 +15,10 @@ const config = {
     'html:reports/report.html',
     'summary',
     'progress-bar',
+    '@cucumber/pretty-formatter'
   ],
   formatOptions: { snippetInterface: 'async-await' },
   worldParameters: getWorldParams(),
 };
 
-if (process.env.USE_ALLURE) {
-  config.format.push('./src/support/reporters/allure-reporter.ts');
-} else {
-  config.format.push('@cucumber/pretty-formatter');
-}
 export default config;

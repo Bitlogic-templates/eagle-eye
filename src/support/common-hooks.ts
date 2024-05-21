@@ -1,6 +1,13 @@
-import { ICustomWorld } from './custom-world';
-import { config } from './config';
-import { Before, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from '@cucumber/cucumber';
+import { ICustomWorld } from "./custom-world";
+import { config } from "./config";
+import {
+  Before,
+  After,
+  BeforeAll,
+  AfterAll,
+  Status,
+  setDefaultTimeout,
+} from "@cucumber/cucumber";
 import {
   chromium,
   ChromiumBrowser,
@@ -10,12 +17,12 @@ import {
   WebKitBrowser,
   ConsoleMessage,
   //request,
-} from '@playwright/test';
-import { ITestCaseHookParameter } from '@cucumber/cucumber/lib/support_code_library_builder/types';
-import { ensureDir } from 'fs-extra';
+} from "@playwright/test";
+import { ITestCaseHookParameter } from "@cucumber/cucumber/lib/support_code_library_builder/types";
+import { ensureDir } from "fs-extra";
 
 let browser: ChromiumBrowser | FirefoxBrowser | WebKitBrowser;
-const tracesDir = 'traces';
+const tracesDir = "traces";
 
 declare global {
   // eslint-disable-next-line no-var
@@ -26,10 +33,10 @@ setDefaultTimeout(process.env.PWDEBUG ? -1 : 60 * 1000);
 
 BeforeAll(async function () {
   switch (config.browser) {
-    case 'firefox':
+    case "firefox":
       browser = await firefox.launch(config.browserOptions);
       break;
-    case 'webkit':
+    case "webkit":
       browser = await webkit.launch(config.browserOptions);
       break;
     default:
@@ -38,29 +45,29 @@ BeforeAll(async function () {
   await ensureDir(tracesDir);
 });
 
-Before({ tags: '@ignore' }, async function () {
+Before({ tags: "@ignore" }, async function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return 'skipped' as any;
+  return "skipped" as any;
 });
 
-Before({ tags: '@debug' }, async function (this: ICustomWorld) {
+Before({ tags: "@debug" }, async function (this: ICustomWorld) {
   this.debug = true;
 });
 
 Before(async function (this: ICustomWorld, { pickle }: ITestCaseHookParameter) {
   this.startTime = new Date();
-  this.testName = pickle.name.replace(/\W/g, '-');
+  this.testName = pickle.name.replace(/\W/g, "-");
   // customize the [browser context](https://playwright.dev/docs/next/api/class-browser#browsernewcontextoptions)
   this.context = await browser.newContext({
     acceptDownloads: true,
-    recordVideo: process.env.PWVIDEO ? { dir: 'screenshots' } : undefined,
+    recordVideo: process.env.PWVIDEO ? { dir: "screenshots" } : undefined,
     viewport: { width: 1200, height: 800 },
   });
 
   await this.context.tracing.start({ screenshots: true, snapshots: true });
   this.page = await this.context.newPage();
-  this.page.on('console', async (msg: ConsoleMessage) => {
-    if (msg.type() === 'log') {
+  this.page.on("console", async (msg: ConsoleMessage) => {
+    if (msg.type() === "log") {
       await this.attach(msg.text());
     }
   });
@@ -69,15 +76,20 @@ Before(async function (this: ICustomWorld, { pickle }: ITestCaseHookParameter) {
 
 After(async function (this: ICustomWorld, { result }: ITestCaseHookParameter) {
   if (result) {
-    await this.attach(`Status: ${result?.status}. Duration:${result.duration?.seconds}s`);
+    await this.attach(
+      `Status: ${result?.status}. Duration:${result.duration?.seconds}s`,
+    );
 
     if (result.status !== Status.PASSED) {
       const image = await this.page?.screenshot();
 
       // Replace : with _ because colons aren't allowed in Windows paths
-      const timePart = this.startTime?.toISOString().split('.')[0].replaceAll(':', '_');
+      const timePart = this.startTime
+        ?.toISOString()
+        .split(".")[0]
+        .replaceAll(":", "_");
 
-      image && (await this.attach(image, 'image/png'));
+      image && (await this.attach(image, "image/png"));
       await this.context?.tracing.stop({
         path: `${tracesDir}/${this.testName}-${timePart}trace.zip`,
       });

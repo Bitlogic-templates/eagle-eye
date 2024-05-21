@@ -37,13 +37,32 @@
     "prettier.singleQuote": true,
     "prettier.trailingComma": "all",
 
-    "cucumberautocomplete.syncfeatures": "./features/**/*.feature",
-    "cucumberautocomplete.steps": [
-        "src/steps/**/*.ts"
+    "cucumber.features": [
+        "features/*.feature",
+        "src/test/**/*.feature",
+        "features/**/*.feature",
+        "tests/**/*.feature",
+        "*specs*/**/*.feature"
+    ],
+    "cucumber.glue": [
+        "*specs*/**/*.cs",
+        "features/**/*.js",
+        "features/**/*.jsx",
+        "features/**/*.php",
+        "features/**/*.py",
+        "features/**/*.rs",
+        "features/**/*.rb",
+        "features/**/*.ts",
+        "features/**/*.tsx",
+        "features/**/*_test.go",
+        "src/test/**/*.java",
+        "tests/**/*.py",
+        "tests/**/*.rs",
+        "src/steps/*.ts",
+        "src/steps/**/*.ts",
     ],
     "typescript.tsdk": "node_modules/typescript/lib",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     }
-
 }

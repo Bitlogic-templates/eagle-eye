@@ -123,3 +123,55 @@ Each feature file should include the feature name (Epics or functionalities), a 
 The implementation of the steps is in the src/steps directory. In this folder, you'll find a file with general implementations like "Click on a button with the text..." and a file for each feature like "Enter the user name".
 
 Support files are located in src/support and contain configurations and implementations such as before steps and before_all setups. If other support scripts not related to Cucumber or Playwright are required, add them to src/utils.
+
+Repository folder structure:
+
+```
+.
+├── cucumber.mjs -- General cucumber configurations
+├── features -- Test cases declaration
+│   ├── dashboard.feature
+│   └── login.feature
+├── reports
+│   ├── cucumber-report.json
+│   └── report.html
+├── src 
+│   ├── steps -- Tests implementation
+│   │   ├── dashboard.steps.ts
+│   │   ├── general.steps.ts
+│   │   └── login.steps.ts
+│   ├── support -- General support files
+│   │   ├── common-hooks.ts -- Before and after (Single and all) 
+│   │   ├── config.ts -- browserOptions and general tests configuration like root URL
+│   │   └── custom-world.ts -- Custom context for cucumber
+│   └── utils
+```
+
+## Feature and scenarios tagging strategy
+
+Each feature should be tagged with the Jira epic ID, and each scenario should be tagged with its corresponding suite (smoke, sanity, regression), the component and the Xray jira ID. Tests in progress should be tagged with @wip and @ignore.
+
+## Docker
+
+The Dockerfile build the base image and add the tests to the Docker image. To build it run:
+
+```
+docker build -t e2e .
+```
+
+And to run the tests in the docker file run:
+
+```
+docker run --rm --env BASE_URL=<BASE_URL> --env EUSERNAME=<user> --env EPASSWORD=<password> -v ./reports:/e2e/reports e2e
+```
+
+Note that the tests report will be saved in ./reports folder
+
+
+## Pretty report
+
+To generate the Pretty report after run the tests run:
+
+```
+npm run new-report
+```
