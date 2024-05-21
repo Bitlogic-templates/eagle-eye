@@ -1,10 +1,10 @@
-# E2E starter project with Playwright 
+# E2E starter project with Playwright
 
 A foundational repository designed for creating end-to-end (E2E) tests using Cucumber(7) alongside Playwright and implemented in Typescript.
 
 ## The Why
-[Read](https://tally-b.medium.com/e2e-testing-with-cucumber-and-playwright-9584d3ef3360) or [watch](https://www.youtube.com/watch?v=PUVFmhYJNJA&list=PLwwCtx3xQxlVMZzS4oi2TafVRngQ1wF_0&index=2). 
 
+[Read](https://tally-b.medium.com/e2e-testing-with-cucumber-and-playwright-9584d3ef3360) or [watch](https://www.youtube.com/watch?v=PUVFmhYJNJA&list=PLwwCtx3xQxlVMZzS4oi2TafVRngQ1wF_0&index=2).
 
 ## Kudos
 
@@ -38,7 +38,6 @@ By default, we will use Chromium. You can define an environment variable called 
 
 On Linux and Mac, you can use:
 
-
 ```
 BROWSER=firefox npm run test
 or
@@ -71,7 +70,6 @@ npm run test
 
 To stop the feature, you can add the `Then debug` step inside your feature. It will stop your debugger.
 
-
 ## To ignore a scenario
 
 - tag the scenario with `@ignore`
@@ -87,7 +85,6 @@ To stop the feature, you can add the `Then debug` step inside your feature. It w
 ## To view the html report of the last run
 
 - run the command `npm run report`.
-
 
 ## Sample tests
 
@@ -135,13 +132,13 @@ Repository folder structure:
 ├── reports
 │   ├── cucumber-report.json
 │   └── report.html
-├── src 
+├── src
 │   ├── steps -- Tests implementation
 │   │   ├── dashboard.steps.ts
 │   │   ├── general.steps.ts
 │   │   └── login.steps.ts
 │   ├── support -- General support files
-│   │   ├── common-hooks.ts -- Before and after (Single and all) 
+│   │   ├── common-hooks.ts -- Before and after (Single and all)
 │   │   ├── config.ts -- browserOptions and general tests configuration like root URL
 │   │   └── custom-world.ts -- Custom context for cucumber
 │   └── utils
@@ -166,7 +163,6 @@ docker run --rm --env BASE_URL=<BASE_URL> --env EUSERNAME=<user> --env EPASSWORD
 ```
 
 Note that the tests report will be saved in ./reports folder
-
 
 ## Pretty report
 

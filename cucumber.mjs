@@ -1,23 +1,23 @@
 const getWorldParams = () => {
   const params = {
-    foo: 'bar',
+    foo: "bar",
   };
 
   return params;
 };
 
 const config = {
-  requireModule: ['ts-node/register'],
-  require: ['src/**/*.ts'],
+  requireModule: ["ts-node/register"],
+  require: ["src/**/*.ts"],
   format: [
     // 'message:e2e/reports/cucumber-report.ndjson',
-    'json:reports/cucumber-report.json',
-    'html:reports/report.html',
-    'summary',
-    'progress-bar',
-    '@cucumber/pretty-formatter'
+    "json:reports/cucumber-report.json",
+    "html:reports/report.html",
+    "summary",
+    "progress-bar",
+    "@cucumber/pretty-formatter",
   ],
-  formatOptions: { snippetInterface: 'async-await' },
+  formatOptions: { snippetInterface: "async-await" },
   worldParameters: getWorldParams(),
 };
 

@@ -7,13 +7,8 @@
     {
       "name": "debug",
       "request": "launch",
-      "runtimeArgs": [
-        "./node_modules/.bin/cucumber-js",
-        "${file}"
-      ],
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "runtimeArgs": ["./node_modules/.bin/cucumber-js", "${file}"],
+      "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node",
       "env": {
         "DEBUG": "pw:api",

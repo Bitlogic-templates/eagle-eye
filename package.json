@@ -4,14 +4,11 @@
   "description": "E2E starter project with Playwright",
   "scripts": {
     "api": "DEBUG=pw:api cucumber-js",
-    "build": "rimraf build && npm run format && npm run lint && tsc && npm run cucumber-check",
-    "cucumber-check": "cucumber-js features/**/*.feature --dry-run --require env/set-environment-variables.ts --require world/custom-world.ts --require step-definitions/**/*.ts --require hooks/**/*.ts  --require-module ts-node/register --format-options \"{\\\"snippetInterface\\\": \\\"async-await\\\"}\" --format summary --format progress --format progress-bar  --publish-quiet",
+    "cucumber-check": "cucumber-js features/**/*.feature --dry-run --require env/set-environment-variables.ts --require world/custom-world.ts --require step-definitions/**/*.ts --require hooks/**/*.ts  --require-module ts-node/register --format-options \"{\\\"snippetInterface\\\": \\\"async-await\\\"}\" --format summary --format progress --format progress-bar",
     "debug": "PWDEBUG=1 DEBUG=pw:api cucumber-js",
     "video": "PWVIDEO=1 cucumber-js",
-    "eslint-fix": "eslint ./ --ext .js,.ts,.tsx --fix",
-    "eslint-init": "eslint --init",
-    "format": "prettier --write \"**/*.{ts,tsx,css,html}\" ",
-    "lint": "eslint ./src/ --format visualstudio --no-color --report-unused-disable-directives",
+    "format": "prettier --write \"**/*.{ts,tsx}\" ",
+    "lint": "eslint ./src/**/* --format visualstudio --no-color --report-unused-disable-directives",
     "only": "cucumber-js --tags",
     "smoke": "cucumber-js --parallel=4 --tags @smoke; node ./src/support/reports/cucumber-reporter.ts",
     "report": "xdg-open reports/report.html",
@@ -40,7 +37,7 @@
     "pngjs": "7.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.2.0",
+    "@eslint/js": "^9.3.0",
     "@types/expect": "24.3.0",
     "@types/fs-extra": "11.0.4",
     "@types/lodash": "4.17.0",
@@ -54,13 +51,13 @@
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-prettier": "5.1.3",
     "fs-extra": "11.2.0",
-    "globals": "^15.2.0",
+    "globals": "^15.3.0",
     "open": "10.1.0",
     "prettier": "3.2.5",
     "rimraf": "5.0.5",
     "standard-version": "9.5.0",
     "ts-node": "10.9.2",
     "typescript": "5.4.2",
-    "typescript-eslint": "^7.9.0"
+    "typescript-eslint": "^7.10.0"
   }
 }
