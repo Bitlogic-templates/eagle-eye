@@ -2,7 +2,7 @@
 <table>
   <tr>
     <td>
-      <img src="https://github.com/bitlogic/cucumber-playwright/assets/8054419/fab83fdc-add3-4957-86b5-e728a2e86448" alt="Logo" width="400">
+      <img src="https://github.com/bitlogic/cucumber-playwright/assets/8054419/fab83fdc-add3-4957-86b5-e728a2e86448" alt="Logo" width="2000">
     </td>
     <td>
       <p> A foundational repository designed for creating end-to-end (E2E) tests using Cucumber(7) alongside Playwright and implemented in TypeScript. This repository serves as a robust starting point for developers looking to implement comprehensive testing strategies. It leverages the power of Cucumber for behavior-driven development (BDD), allowing for clear and understandable test scenarios written in Gherkin. Playwright, with its powerful browser automation capabilities, ensures reliable and efficient test execution across multiple browsers. The use of TypeScript adds type safety and modern TypeScript features, making the development process more efficient and less error-prone. This setup is ideal for teams aiming to enhance their testing frameworks with scalable and maintainable solutions.</p>
