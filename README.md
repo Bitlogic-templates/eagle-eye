@@ -2,8 +2,7 @@
 <table>
   <tr>
     <td>
-      <img sr![peregrin drawio (15)](https://github.com/bitlogic/cucumber-playwright/assets/8054419/4e7a0ea2-713f-4eb9-90e3-632937148fa8)
-c= alt="Logo" width="100">
+![peregrin drawio (15)](https://github.com/bitlogic/cucumber-playwright/assets/8054419/fab83fdc-add3-4957-86b5-e728a2e86448)
     </td>
     <td>
       <p>A foundational repository designed for creating end-to-end (E2E) tests using Cucumber(7) alongside Playwright and implemented in Typescript.</p>
