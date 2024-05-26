@@ -1,6 +1,10 @@
-# Eagle Eye - E2E starter project
-![image](https://github.com/bitlogic/cucumber-playwright/assets/8054419/580d17c0-0375-4771-8335-66aa5ff06e3b)
-
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/bitlogic/cucumber-playwright/assets/8054419/a9216afc-cc95-4385-9151-a7bb550fe932" alt="Logo" width="2000">
+    </td>
+  </tr>
+</table>
 <table>
   <tr>
     <td>
