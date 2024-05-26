@@ -1,4 +1,6 @@
-# E2E starter project with Playwright
+# Eagle Eye - E2E starter project
+![image](https://github.com/bitlogic/cucumber-playwright/assets/8054419/580d17c0-0375-4771-8335-66aa5ff06e3b)
+
 <table>
   <tr>
     <td>
