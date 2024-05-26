@@ -2,7 +2,7 @@
 <table>
   <tr>
     <td>
-      <img src="[https://github.com/bitlogic/cucumber-playwright/assets/8054419/fab83fdc-add3-4957-86b5-e728a2e86448]" alt="Logo" width="100">
+      <img src="https://github.com/bitlogic/cucumber-playwright/assets/8054419/fab83fdc-add3-4957-86b5-e728a2e86448" alt="Logo" width="400">
     </td>
     <td>
       <p>A foundational repository designed for creating end-to-end (E2E) tests using Cucumber(7) alongside Playwright and implemented in Typescript.</p>
