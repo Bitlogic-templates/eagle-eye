@@ -37,7 +37,7 @@ Create a repo based on this template and start writing your tests.
 ## To run your tests
 
 `npm run test` or `npx cucumber-js` runs all tests
-`npm run test <feature name>` or `npx cucumber-js <feature name>` run the single feature
+`npm run only tag>` to run the single tag
 
 ## Browser selection
 
