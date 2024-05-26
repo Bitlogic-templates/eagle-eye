@@ -20,7 +20,7 @@
 This repository is based on the [Cucumber-typescript-starter](https://github.com/hdorgeval/cucumber7-ts-starter/) repo.
 
 ## Contents
-
+- Setup development environment
 - TypeScript configuration for creating steps with eslint/typescript and prettier
 - Initialization of Playwright browser before executing tests
 - Creation of new context and page for each scenario
@@ -29,6 +29,15 @@ This repository is based on the [Cucumber-typescript-starter](https://github.com
 - Allure reports (TDB)
 - Utility functions to aid in step writing (TBD)
 - VScode setup for debugging a single feature or a specific scenario (activated when located in the feature file)
+
+## Setup development environment
+In the root directory run
+
+```
+npm install
+npx playwright install
+```
+
 
 ## Usage
 
