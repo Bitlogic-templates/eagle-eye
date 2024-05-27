@@ -26,6 +26,7 @@
 This repository is based on the [Cucumber-typescript-starter](https://github.com/hdorgeval/cucumber7-ts-starter/) repo.
 
 ## Contents
+- Solution diagram
 - Setup development environment
 - TypeScript configuration for creating steps with eslint/typescript and prettier
 - Initialization of Playwright browser before executing tests
@@ -35,6 +36,15 @@ This repository is based on the [Cucumber-typescript-starter](https://github.com
 - Allure reports (TDB)
 - Utility functions to aid in step writing (TBD)
 - VScode setup for debugging a single feature or a specific scenario (activated when located in the feature file)
+
+## Solution diagram
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/bitlogic/eagle-eye/assets/8054419/d62ea84c-c283-4c89-b4ee-c389fb00cf12" alt="Logo" width="2000">
+    </td>
+  </tr>
+</table>
 
 ## Setup development environment
 In the root directory run
