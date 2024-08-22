@@ -34,7 +34,8 @@
     "cucumber-html-reporter": "^6.0.0",
     "multiple-cucumber-html-reporter": "^3.6.2",
     "pixelmatch": "5.3.0",
-    "pngjs": "7.0.0"
+    "pngjs": "7.0.0",
+    "test-results-reporter": "^1.1.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.3.0",

@@ -196,6 +196,14 @@ docker run --rm --env BASE_URL=<BASE_URL> --env EUSERNAME=<user> --env EPASSWORD
 
 Note that the tests report will be saved in ./reports folder
 
+## Publish report to slack
+
+Set de environment variable SLACKWH with the URL of slack WebHook and run the command below
+
+```
+npx test-results-reporter publish -c config.json
+```
+
 ## Pretty report
 
 To generate the Pretty report after run the tests run:

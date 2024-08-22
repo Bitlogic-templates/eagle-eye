@@ -1,0 +1,38 @@
+{
+  "project": "Eagle eye",
+  "run": "UI Tests",
+  "targets": [
+    {
+      "name": "slack",
+      "inputs": {
+        "url": "{SLACKWH}",
+        "title": "{SUITE}",
+        "publish": "failure-details",
+        "max_suites": 20
+      },
+      "extensions": [
+        {
+          "name": "hyperlinks",
+          "inputs": {
+            "links": [
+              {
+                "text": "Build Logs",
+                "url": "{CI_JOB_URL}"
+              },
+              {
+                "text": "Test report",
+                "url": "{CI_JOB_URL}/artifacts/external_file/reports/index.html"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "type": "cucumber",
+      "files": ["reports/cucumber-report.json"]
+    }
+  ]
+}
