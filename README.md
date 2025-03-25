@@ -23,7 +23,7 @@
 
 ## Kudos
 
-This repository is based on the [Cucumber-typescript-starter](https://github.com/hdorgeval/cucumber7-ts-starter/) repo.
+This repository is based on the [Cucumber-typescript-starter](https://github.com/hdorgeval/cucumber7-ts-starter/) repo adn https://github.com/Tallyb/cucumber-playwright repo.
 
 ## Contents
 - Solution diagram
